@@ -1,0 +1,323 @@
+/* Configurações Globais */
+:root {
+  --neon-blue: #00d4ff;
+  --bg-dark: #05070a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* --- CONFIGURAÇÃO DO CURSOR (KURAPIKA) --- */
+/* Certifique-se de que a imagem esteja em public/assets/imagens/cursor-kurapika.png */
+html, body {
+  scroll-behavior: smooth;
+  background: radial-gradient(circle at center, #1a1b3a 0%, #05070a 100%);
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  
+  /* Cursor padrão (seta) */
+  cursor: url('/assets/imagens/cursor-kurapika.png'), auto;
+}
+
+/* Cursor para elementos clicáveis (mãozinha) */
+a, button, .game-card, .close-btn {
+  cursor: url('/assets/imagens/cursor-kurapika-pointer.png'), pointer;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: rgba(5, 7, 10, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.nav-logo h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: 1rem;
+  color: var(--neon-blue);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.nav-menu a:hover {
+  color: var(--neon-blue);
+  opacity: 1;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* --- SEÇÃO HERO --- */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  height: 90vh;
+  gap: 50px;
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-family: 'Bungee', sans-serif;
+  font-size: 3.8rem;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #a0a0c0;
+  margin-bottom: 35px;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.intro-img {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.2);
+  filter: drop-shadow(0 0 20px #00d4ff66);
+  border: 1px solid var(--neon-blue);
+  transition: transform 0.9s ease;
+}
+
+.intro-img:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.btn-explore {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--neon-blue);
+  padding: 14px 35px;
+  color: var(--neon-blue);
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 25px var(--neon-blue);
+  transform: translateY(-2px);
+}
+
+/* --- SEÇÃO DE TRANSIÇÃO --- */
+#transition-container {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.console-box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background: #161b22;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-art img {
+  width: 140px;
+  filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.transition-text h2 {
+  font-family: 'Bungee', sans-serif;
+  color: var(--neon-blue);
+  margin-bottom: 10px;
+}
+
+/* --- GRID DE JOGOS --- */
+#games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 30px;
+  padding: 80px 8%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-card {
+  background: #0d1117;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); 
+}
+
+.game-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid var(--neon-blue);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.game-card:hover .game-cover {
+  transform: scale(1.1);
+}
+
+.logo-container {
+  width: 100%;
+  padding: 10px 5px;
+  min-height: 45px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.game-card h3 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', system-ui !important;
+  font-size: 0.75rem !important;
+  color: #999781 !important;
+}
+
+.font-clean {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 1.5rem !important;
+  color: #fff;
+}
+
+/* --- MODAL --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  perspective: 1200px;
+}
+
+.modal-content {
+  background: #161b22;
+  width: 90%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);
+  animation: flipIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes flipIn {
+  from { transform: rotateY(-95deg); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+
+.modal-img {
+  width: 280px;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  flex: 1;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+  line-height: 1;
+}
+
+.stats p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #ccc;
+}
+
+.stats strong { color: var(--neon-blue); }
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 26px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #fff;
+  color: #000;
+}

@@ -5,8 +5,7 @@
   --card-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* --- CONFIGURAÇÃO DO CURSOR (KURAPIKA) --- */
-/* Certifique-se de que a imagem esteja em public/assets/imagens/cursor-kurapika.png */
+
 html, body {
   scroll-behavior: smooth;
   background: radial-gradient(circle at center, #1a1b3a 0%, #05070a 100%);
@@ -16,16 +15,16 @@ html, body {
   margin: 0;
   overflow-x: hidden;
   
-  /* Cursor padrão (seta) */
+  
   cursor: url('/assets/imagens/cursor-kurapika.png'), auto;
 }
 
-/* Cursor para elementos clicáveis (mãozinha) */
+
 a, button, .game-card, .close-btn {
   cursor: url('/assets/imagens/cursor-kurapika-pointer.png'), pointer;
 }
 
-/* --- NAVBAR --- */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -70,7 +69,7 @@ a, button, .game-card, .close-btn {
   text-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* --- SEÇÃO HERO --- */
+
 #hero {
   display: flex;
   align-items: center;
@@ -135,7 +134,7 @@ a, button, .game-card, .close-btn {
   transform: translateY(-2px);
 }
 
-/* --- SEÇÃO DE TRANSIÇÃO --- */
+
 #transition-container {
   height: 60vh;
   display: flex;
@@ -168,7 +167,7 @@ a, button, .game-card, .close-btn {
   margin-bottom: 10px;
 }
 
-/* --- GRID DE JOGOS --- */
+
 #games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
@@ -238,7 +237,7 @@ a, button, .game-card, .close-btn {
   color: #fff;
 }
 
-/* --- MODAL --- */
+
 .modal-overlay {
   position: fixed;
   top: 0;

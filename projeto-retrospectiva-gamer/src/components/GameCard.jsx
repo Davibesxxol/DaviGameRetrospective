@@ -1,7 +1,7 @@
-// src/components/GameCard.jsx
+
 export function GameCard({ game, onClick }) {
   
-  // Lógica para decidir a fonte baseada no título definido no games.js
+ 
   const getFontClass = () => {
     if (game.title === "Stardew Valley") return "font-pixel";
     return "font-clean"; 
@@ -19,7 +19,7 @@ export function GameCard({ game, onClick }) {
         {game.logo ? (
           <img src={`/assets/imagens/${game.logo}`} alt={game.title} className="game-logo" />
         ) : (
-          /* Aplica a classe de fonte individual aqui */
+        
           <h3 className={getFontClass()}>{game.title}</h3>
         )}
       </div>
